@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
 const About = () => {
-  const { ref } = useSectionInView("Home");
+  const { ref } = useSectionInView("About");
 
   return (
     <motion.section
