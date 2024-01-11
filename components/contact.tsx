@@ -5,9 +5,11 @@ import SectionHeading from "./section-heading";
 import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { sendEmail } from "@/actions/senderEmail";
 
 const Contact = () => {
   const { ref } = useSectionInView("Contact");
+
   return (
     <motion.section
       ref={ref}
@@ -27,15 +29,26 @@ const Contact = () => {
         or through this form
       </p>
 
-      <form className="mt-10 flex flex-col ">
+      <form
+        className="mt-10 flex flex-col "
+        action={async (formData) => {
+          await sendEmail(formData);
+        }}
+      >
         <input
           type="email"
+          name="senderEmail"
+          required
+          maxLength={500}
           className="h-14 rounded-lg borderBlack px-4"
           placeholder="Your email"
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4"
           placeholder="Your message"
+          required
+          maxLength={500}
+          name="message"
         />
         <button
           type="submit"
