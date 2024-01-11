@@ -8,12 +8,14 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
 
 const Experience = () => {
+  const { ref } = useSectionInView("Home", 0.5);
   return (
-    <section id="experience">
+    <section ref={ref} id="experience" className="mt-28">
       <SectionHeading>My Experience</SectionHeading>
-      <VerticalTimeline>
+      <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
