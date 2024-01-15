@@ -21,7 +21,11 @@ const ThemeSwitch = () => {
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme") as Theme | null;
 
-    localTheme && setTheme(localTheme);
+    if (localTheme) {
+      setTheme(localTheme);
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+    }
   }, []);
 
   return (
