@@ -19,29 +19,33 @@ const About = () => {
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
         After graduating with a degree in{" "}
-        <span className="font-medium">Accounting</span>, I decided to pursue my
-        passion for programming. I enrolled in a coding bootcamp and learned{" "}
+        <span className="font-medium">Aeronautical Mechanical Engineering</span>
+        , I decided to pursue my passion for programming. I enrolled in a coding
+        bootcamp with{" "}
+        <a
+          href="https://www.hackyourfuture.net/"
+          className="text-[#0eff01] underline"
+          target="_blank"
+        >
+          Hack Your Future
+        </a>{" "}
+        and learned{" "}
         <span className="font-medium">full-stack web development</span>.{" "}
         <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
+        problem-solving aspect. I love the feeling of finally figuring out a
+        solution to a problem. My core stack is{" "}
         <span className="font-medium">
           React, Next.js, Node.js, and MongoDB
         </span>
-        . I am also familiar with TypeScript and Prisma. I am always looking to
+        . I am also familiar with TypeScript and Vuejs. I am always looking to
         learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
+        <span className="font-medium">Front-end position</span> as a software
         developer.
       </p>
 
       <p>
         <span className="italic">When I&apos;m not coding</span>, I enjoy
-        playing video games, watching movies, and playing with my dog. I also
-        enjoy <span className="font-medium">learning new things</span>. I am
-        currently learning about{" "}
-        <span className="font-medium">history and philosophy</span>. I&apos;m
-        also learning how to play the guitar.
+        playing sports, watching movies and series, and ride my bike.
       </p>
     </motion.section>
   );
