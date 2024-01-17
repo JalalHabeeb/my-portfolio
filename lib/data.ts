@@ -4,7 +4,7 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import myPortfolioImg from "../public/myPortfolio.jpg";
 import promptopiaImg from "../public/promptopia.jpg";
-import iconPhotographyImg from "..iconPhotography.jpg";
+import iconPhotographyImg from "../public/iconPhotography.jpg";
 
 export const links = [
   {
