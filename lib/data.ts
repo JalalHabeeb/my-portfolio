@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import myPortfolioImg from "@/public/myPortfolio.jpg";
-import promptopiaImg from "@/public/promptopia.jpg";
-import iconPhotographyImg from "@/public/iconPhotography.jpg";
+import myPortfolioImg from "../public/myPortfolio.jpg";
+import promptopiaImg from "../public/promptopia.jpg";
+import iconPhotographyImg from "..iconPhotography.jpg";
 
 export const links = [
   {
