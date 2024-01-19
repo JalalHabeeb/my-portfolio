@@ -1,7 +1,12 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
+import {
+  FaCode,
+  FaLaptopCode,
+  FaLanguage,
+  FaGear,
+  FaLaptopMedical,
+  FaGraduationCap,
+} from "react-icons/fa6";
 import myPortfolioImg from "../public/myPortfolio.jpg";
 import promptopiaImg from "../public/promptopia.jpg";
 import iconPhotographyImg from "../public/iconPhotography.jpg";
@@ -35,28 +40,52 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "B.Sc. in Aeronautical Mechanical Engineering",
+    location: "Aleppo, SY",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
+      "I Graduated from as an Engineer with a B.Sc. in Aeronautical Mechanical Engineering from Aleppo University in Syria",
+    icon: React.createElement(FaGraduationCap),
+    date: "2003 - 2009",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Front-end WEb Developer @: Stirring Interactive",
+    location: "Homs, SY",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+      "I worked in a developers team where I built websites using HTML and CSS while I kept close connection with client to modify the design upon requesting, as well as maintain an open communication link with other development teams to ensure efficiency",
+    icon: React.createElement(FaCode),
+    date: "2009 - 2010",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Translator & Proofreader @: Self Employed",
+    location: "Homs, SY",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "II worked as English/Arabic translator and proofreader as freelancer with different local and international companies.",
+    icon: React.createElement(FaLanguage),
+    date: "2010 - 2018",
+  },
+  {
+    title: "Mechanical Design Engineer @: WDRVM",
+    location: "Homs, SY",
+    description:
+      "I worked in the mechanical design team of a wind turbines factory where I used SolidWorks to design mechanical parts and produce production drawings from part/Assembly, as well as assembling the wind turbine and calibrating shafts alignment and flanges parallelism  using 'Eazy Lazer' technologies.",
+    icon: React.createElement(FaGear),
+    date: "2018 - 2020",
+  },
+  {
+    title: "Operations Lead @: BlueBook",
+    location: "Homs, SY",
+    description:
+      "Co-founder of BlueBook for tech services such as fixing and maintaining PCs and laptops on the hardware/Software level, as well as buy and sell new and used laptops and PCs.",
+    icon: React.createElement(FaLaptopMedical),
+    date: "2018 - 2020",
+  },
+  {
+    title: "Full-Stack Web Development @: Hack Your Future",
+    location: "Amsterdam, NL",
+    description:
+      "I graduated from a 7-month coding bootcamp with modules on HTML, CSS, JavaScript, Node.js, Express.js, MySQL, and React.",
+    icon: React.createElement(FaLaptopCode),
+    date: "2022 - 2023",
   },
 ] as const;
 
