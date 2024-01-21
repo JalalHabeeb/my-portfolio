@@ -7,9 +7,9 @@ import {
   FaLaptopMedical,
   FaGraduationCap,
 } from "react-icons/fa6";
-import myPortfolioImg from "../public/myPortfolio.jpg";
-import promptopiaImg from "../public/promptopia.jpg";
-import iconPhotographyImg from "../public/iconPhotography.jpg";
+import myPortfolioImg from "@/public/myPortfolio.png";
+import promptopiaImg from "@/public/promptopia.png";
+import iconPhotographyImg from "@/public/iconPhotography.png";
 
 export const links = [
   {
