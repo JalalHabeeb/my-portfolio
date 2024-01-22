@@ -36,7 +36,7 @@ const Project = ({
           <a
             href={link}
             className="text-2xk font-semibold underline"
-            target="_blanck"
+            target="_blank"
           >
             {title}
           </a>
