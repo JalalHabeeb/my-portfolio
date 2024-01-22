@@ -94,6 +94,7 @@ export const projectsData = [
     title: "Portfolio",
     description:
       "My own portfolio. Contain all my information, Skills, Experiences and Contact details.",
+    link: "https://jalalhabeeb.vercel.app/",
     tags: ["React", "Next.js", "Tailwind", "TypeScript", "Framer"],
     imageUrl: myPortfolioImg,
   },
@@ -101,6 +102,7 @@ export const projectsData = [
     title: "Promptopia",
     description:
       "Promptopia is an open-source AI prompting tool for modern world to discover, create and share creative prompts",
+    link: "https://promptopia-three-pink.vercel.app/",
     tags: ["React", "Next.js", "Tailwind", "Next-auth", "MongoDB"],
     imageUrl: promptopiaImg,
   },
@@ -108,6 +110,7 @@ export const projectsData = [
     title: "Icon Photography",
     description:
       "I'm working on this website for a client who is a photographer and videogrpapher for special occasions.",
+    link: "https://icon-photography.vercel.app/",
     tags: ["React", "Next.js", "Tailwind"],
     imageUrl: iconPhotographyImg,
   },
