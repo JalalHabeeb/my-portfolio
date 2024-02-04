@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is my personal protfolio [Jalal Habeeb](https://jalalhabeeb.vercel.app/) project.
+I built this website using React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS, Framer Motion, React Email & Resend, Vercel hosting.
+
+![Portfolio](https://imgur.com/qsWSMoV "Jalal Habeeb portfolio")
 
 ## Getting Started
 
