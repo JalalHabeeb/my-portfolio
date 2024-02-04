@@ -1,7 +1,7 @@
 This is my personal protfolio [Jalal Habeeb](https://jalalhabeeb.vercel.app/) project.
 I built this website using React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS, Framer Motion, React Email & Resend, Vercel hosting.
 
-![Portfolio](https://imgur.com/qsWSMoV "Jalal Habeeb portfolio")
+![Portfolio](https://imgur.com/qsWSMoV.jpg "Jalal Habeeb portfolio")
 
 ## Getting Started
 
