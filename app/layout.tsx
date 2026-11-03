@@ -18,11 +18,19 @@ const title = "Jalal Habeeb · Front-end Developer";
 const description =
   "I'm a front-end developer at Appical in Amsterdam, building web apps with React and TypeScript. See my experience, side projects and how to reach me.";
 
+// The page is prerendered, so this is the time of the latest deploy.
+const publishedAt = new Date().toISOString();
+
 export const metadata: Metadata = {
   // Absolute base for the generated Open Graph image URL in link previews.
   metadataBase: new URL("https://jalalhabeeb.vercel.app"),
   title,
   description,
+  authors: [{ name: "Jalal Habeeb", url: "https://jalalhabeeb.vercel.app" }],
+  // LinkedIn's Post Inspector reads the author and publish date from these.
+  other: {
+    publish_date: publishedAt,
+  },
   openGraph: {
     title,
     description,
