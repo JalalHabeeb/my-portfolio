@@ -15,7 +15,7 @@ const Projects = () => {
       id="projects"
       className="mb-28 w-full max-w-[56rem] scroll-mt-28"
     >
-      <SectionHeading>My Projects</SectionHeading>
+      <SectionHeading>Side Projects</SectionHeading>
 
       <div className="grid gap-4 sm:grid-cols-2">
         {projectsData.map((project) => (

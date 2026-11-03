@@ -61,14 +61,14 @@ const Intro = () => {
 
         <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
           <Link
-            href="#projects"
+            href="#experience"
             className="group flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3 font-medium text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-white/90"
             onClick={() => {
-              setActiveSection("Projects");
+              setActiveSection("Experience");
               setTimeOfLastClick(Date.now());
             }}
           >
-            See my work
+            See my experience
             <BsArrowRight className="transition group-hover:translate-x-1" />
           </Link>
           <a

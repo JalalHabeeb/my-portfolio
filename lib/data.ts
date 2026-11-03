@@ -12,16 +12,16 @@ export const links = [
     hash: "#about",
   },
   {
-    name: "Projects",
-    hash: "#projects",
+    name: "Experience",
+    hash: "#experience",
   },
   {
     name: "Skills",
     hash: "#skills",
   },
   {
-    name: "Experience",
-    hash: "#experience",
+    name: "Projects",
+    hash: "#projects",
   },
   {
     name: "Contact",
@@ -92,33 +92,33 @@ export const earlierExperienceData = [
 
 export const projectsData = [
   {
+    title: "Portfolio",
+    description:
+      "This site, built with Next.js 16 and React 19: a server-action contact form that sends through Resend, dark mode without a flash on load, scroll-aware navigation and a responsive, accessible layout.",
+    link: "https://jalalhabeeb.vercel.app/",
+    repo: "https://github.com/JalalHabeeb/my-portfolio",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind", "Framer Motion", "Resend"],
+    imageUrl: myPortfolioImg,
+    featured: true,
+  },
+  {
     title: "Promptopia",
     description:
-      "An open-source AI prompting tool for discovering, creating and sharing creative prompts, with NextAuth sign-in and a MongoDB backend.",
+      "An AI prompt-sharing app for discovering, creating and sharing prompts, with NextAuth sign-in and a MongoDB backend.",
     link: "https://promptopia-three-pink.vercel.app/",
     repo: "https://github.com/JalalHabeeb/promptopia",
-    tags: ["Next.js", "React", "Tailwind", "NextAuth", "MongoDB"],
+    tags: ["Next.js", "NextAuth", "MongoDB"],
     imageUrl: promptopiaImg,
-    featured: true,
+    featured: false,
   },
   {
     title: "Icon Photography",
     description:
-      "A website for a client who is a photographer and videographer for special occasions.",
+      "A website for a photographer and videographer who covers special occasions.",
     link: "https://icon-photography.vercel.app/",
     repo: "https://github.com/JalalHabeeb/icon-photography",
-    tags: ["Next.js", "React", "Tailwind"],
+    tags: ["Next.js", "Tailwind"],
     imageUrl: iconPhotographyImg,
-    featured: false,
-  },
-  {
-    title: "Portfolio",
-    description:
-      "This site: a single-page portfolio with a server-action contact form, dark mode and scroll-aware navigation.",
-    link: "https://jalalhabeeb.vercel.app/",
-    repo: "https://github.com/JalalHabeeb/my-portfolio",
-    tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-    imageUrl: myPortfolioImg,
     featured: false,
   },
 ] as const;

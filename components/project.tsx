@@ -33,8 +33,10 @@ const Project = ({
     >
       <div
         className={clsx(
-          "relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-white/5",
-          featured && "sm:order-2 sm:aspect-auto sm:min-h-[20rem]"
+          "relative overflow-hidden bg-gray-100 dark:bg-white/5",
+          featured
+            ? "aspect-[16/10] sm:order-2 sm:aspect-auto sm:min-h-[20rem]"
+            : "aspect-[2/1]"
         )}
       >
         <Image
@@ -48,7 +50,12 @@ const Project = ({
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-6 sm:p-8">
+      <div
+        className={clsx(
+          "flex flex-1 flex-col p-6",
+          featured && "sm:p-8"
+        )}
+      >
         {featured && (
           <p className="mb-2 text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-300">
             Featured
