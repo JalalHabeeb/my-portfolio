@@ -8,10 +8,9 @@ import {
   Container,
   Preview,
   Section,
+  Tailwind,
   Text,
 } from "@react-email/components";
-
-import { Tailwind } from "@react-email/tailwind";
 
 type ContactFormEmailProps = {
   message: string;
@@ -26,7 +25,7 @@ const ContactFormEmail = ({ message, senderEmail }: ContactFormEmailProps) => {
       <Tailwind>
         <Body className="bg-gray-100">
           <Container>
-            <Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
+            <Section className="bg-white border border-solid border-black/10 my-10 px-10 py-4 rounded-md">
               <Heading className="leading-tight">
                 You received the following message from the contact form
               </Heading>
