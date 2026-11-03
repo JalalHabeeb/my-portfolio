@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, createContext, useContext } from "react";
+import React, { createContext, useContext, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 type ThemeContextProviderProp = {
@@ -13,34 +13,34 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
+// The inline script in app/layout.tsx sets the "dark" class on <html> before
+// first paint, so that class is the source of truth for the current theme.
+const subscribe = (onChange: () => void) => {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+  return () => observer.disconnect();
+};
+
+const getTheme = (): Theme =>
+  document.documentElement.classList.contains("dark") ? "dark" : "light";
+
+const getServerTheme = (): Theme => "light";
+
 const ThemeContextProvider = ({ children }: ThemeContextProviderProp) => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const theme = useSyncExternalStore(subscribe, getTheme, getServerTheme);
 
   const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      window.localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      window.localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
+    const nextTheme: Theme = theme === "light" ? "dark" : "light";
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    try {
+      window.localStorage.setItem("theme", nextTheme);
+    } catch {
+      // Storage can be unavailable (private mode); the toggle still works.
     }
   };
-
-  useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
-
-    if (localTheme) {
-      setTheme(localTheme);
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
 
   return (
     <ThemeContext.Provider
