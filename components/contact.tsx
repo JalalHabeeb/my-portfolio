@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -10,7 +10,10 @@ import toast from "react-hot-toast";
 
 const Contact = () => {
   const { ref } = useSectionInView("Contact");
-  const formRef = useRef<HTMLFormElement>(null);
+  // Controlled fields: React 19 resets uncontrolled fields after every form
+  // action, which would wipe the message when sending fails.
+  const [senderEmail, setSenderEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   return (
     <motion.section
@@ -32,7 +35,6 @@ const Contact = () => {
       </p>
 
       <form
-        ref={formRef}
         className="mt-10 flex flex-col dark:text-black items-center"
         action={async (formData) => {
           const { error } = await sendEmail(formData);
@@ -41,12 +43,15 @@ const Contact = () => {
             return;
           }
           toast.success("Email sent successfully");
-          formRef.current?.reset();
+          setSenderEmail("");
+          setMessage("");
         }}
       >
         <input
           type="email"
           name="senderEmail"
+          value={senderEmail}
+          onChange={(e) => setSenderEmail(e.target.value)}
           required
           maxLength={500}
           className="h-14 rounded-lg borderBlack px-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none w-full"
@@ -58,6 +63,8 @@ const Contact = () => {
           required
           maxLength={5000}
           name="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
         />
         <SubmitBtn />
       </form>
