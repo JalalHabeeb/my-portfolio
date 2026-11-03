@@ -24,7 +24,7 @@ const About = () => {
         bootcamp with{" "}
         <a
           href="https://www.hackyourfuture.net/"
-          className="text-[#0eff01] underline"
+          className="text-green-700 underline dark:text-green-400"
           target="_blank"
         >
           Hack Your Future
@@ -37,15 +37,14 @@ const About = () => {
         <span className="font-medium">
           React, Next.js, Node.js, and MongoDB
         </span>
-        . I am also familiar with TypeScript and Vuejs. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">Front-end position</span> as a software
-        developer.
+        . I am also familiar with TypeScript and Vue.js. I am always looking to
+        learn new technologies. I currently work as a{" "}
+        <span className="font-medium">front-end developer</span> at Appical.
       </p>
 
       <p>
         <span className="italic">When I&apos;m not coding</span>, I enjoy
-        playing sports, watching movies and series, and ride my bike.
+        playing sports, watching movies and series, and riding my bike.
       </p>
     </motion.section>
   );

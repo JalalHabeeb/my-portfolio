@@ -5,6 +5,9 @@ export const validateString = (value: unknown, maxLength: number) => {
   return true;
 };
 
+export const isValidEmail = (value: unknown): value is string =>
+  typeof value === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
 

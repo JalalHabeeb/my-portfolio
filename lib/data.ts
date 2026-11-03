@@ -43,12 +43,12 @@ export const experiencesData = [
     title: "B.Sc. in Aeronautical Mechanical Engineering",
     location: "Aleppo, SY",
     description:
-      "I Graduated from as an Engineer with a B.Sc. in Aeronautical Mechanical Engineering from Aleppo University in Syria",
+      "I graduated as an Engineer with a B.Sc. in Aeronautical Mechanical Engineering from Aleppo University in Syria",
     icon: React.createElement(FaGraduationCap),
     date: "2003 - 2009",
   },
   {
-    title: "Front-end WEb Developer @: Stirring Interactive",
+    title: "Front-end Web Developer @: Stirring Interactive",
     location: "Homs, SY",
     description:
       "I worked in a developers team where I built websites using HTML and CSS while I kept close connection with client to modify the design upon requesting, as well as maintain an open communication link with other development teams to ensure efficiency",
@@ -59,7 +59,7 @@ export const experiencesData = [
     title: "Translator & Proofreader @: Self Employed",
     location: "Homs, SY",
     description:
-      "II worked as English/Arabic translator and proofreader as freelancer with different local and international companies.",
+      "I worked as an English/Arabic translator and proofreader as a freelancer with different local and international companies.",
     icon: React.createElement(FaLanguage),
     date: "2010 - 2018",
   },
@@ -67,7 +67,7 @@ export const experiencesData = [
     title: "Mechanical Design Engineer @: WDRVM",
     location: "Homs, SY",
     description:
-      "I worked in the mechanical design team of a wind turbines factory where I used SolidWorks to design mechanical parts and produce production drawings from part/Assembly, as well as assembling the wind turbine and calibrating shafts alignment and flanges parallelism  using 'Eazy Lazer' technologies.",
+      "I worked in the mechanical design team of a wind turbines factory where I used SolidWorks to design mechanical parts and produce production drawings from part/Assembly, as well as assembling the wind turbine and calibrating shafts alignment and flanges parallelism using Easy-Laser technologies.",
     icon: React.createElement(FaGear),
     date: "2018 - 2020",
   },
@@ -88,10 +88,10 @@ export const experiencesData = [
     date: "2022 - 2023",
   },
   {
-    title: "Front-end Web developer @: Appical",
+    title: "Front-end Web Developer @: Appical",
     location: "Amsterdam, NL",
     description:
-      "front-end developer in a team of developers where I built and maintained the company's web applications using React, Redux, TypeScript, JavaScript, and Storybook.",
+      "I work as a front-end developer in a team of developers, building and maintaining the company's web applications using React, Redux, TypeScript, JavaScript, and Storybook.",
     icon: React.createElement(FaLaptopCode),
     date: "2024 - now",
   },
@@ -101,7 +101,7 @@ export const projectsData = [
   {
     title: "Portfolio",
     description:
-      "My own portfolio. Contain all my information, Skills, Experiences and Contact details.",
+      "My own portfolio. Contains all my information, skills, experience and contact details.",
     link: "https://jalalhabeeb.vercel.app/",
     tags: ["React", "Next.js", "Tailwind", "TypeScript", "Framer"],
     imageUrl: myPortfolioImg,
@@ -109,7 +109,7 @@ export const projectsData = [
   {
     title: "Promptopia",
     description:
-      "Promptopia is an open-source AI prompting tool for modern world to discover, create and share creative prompts",
+      "Promptopia is an open-source AI prompting tool for the modern world to discover, create and share creative prompts",
     link: "https://promptopia-three-pink.vercel.app/",
     tags: ["React", "Next.js", "Tailwind", "Next-auth", "MongoDB"],
     imageUrl: promptopiaImg,
@@ -117,7 +117,7 @@ export const projectsData = [
   {
     title: "Icon Photography",
     description:
-      "I'm working on this website for a client who is a photographer and videogrpapher for special occasions.",
+      "A website for a client who is a photographer and videographer for special occasions.",
     link: "https://icon-photography.vercel.app/",
     tags: ["React", "Next.js", "Tailwind"],
     imageUrl: iconPhotographyImg,
