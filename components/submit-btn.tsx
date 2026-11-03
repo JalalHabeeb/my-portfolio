@@ -1,4 +1,3 @@
-import React from "react";
 import { useFormStatus } from "react-dom";
 import { FaPaperPlane } from "react-icons/fa";
 
@@ -12,10 +11,13 @@ const SubmitBtn = () => {
       disabled={pending}
     >
       {pending ? (
-        <div
-          className="h-5 w-5 animate-spin rounded-full border-b-2 border-current motion-reduce:animate-none"
-          aria-label="Sending"
-        ></div>
+        <>
+          <span
+            className="h-5 w-5 animate-spin rounded-full border-b-2 border-current motion-reduce:animate-none"
+            aria-hidden="true"
+          />
+          <span className="sr-only">Sending</span>
+        </>
       ) : (
         <>
           Submit{" "}
