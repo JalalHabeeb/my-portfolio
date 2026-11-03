@@ -6,9 +6,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section";
+
+const iconLinkClass =
+  "flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white/70 text-lg text-gray-700 backdrop-blur transition hover:-translate-y-0.5 hover:text-gray-950 dark:border-white/10 dark:bg-white/5 dark:text-white/70 dark:hover:text-white";
 
 const Intro = () => {
   const { ref } = useSectionInView("Home", 0.5);
@@ -17,97 +20,83 @@ const Intro = () => {
   return (
     <section
       ref={ref}
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-28 max-w-[52rem] scroll-mt-[100rem] px-4 text-center sm:mb-0"
       id="home"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "tween", duration: 0.2 }}
-          >
-            <Image
-              src="/jalal.jpg"
-              alt="Jalal portrait"
-              width="192"
-              height="192"
-              quality="95"
-              priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
-            />
-          </motion.div>
-          <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
+      <motion.div
+        className="flex flex-col items-center"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div className="inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/70 py-1 pl-1 pr-4 text-sm text-gray-700 backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-white/70">
+          <Image
+            src="/jalal.jpg"
+            alt="Portrait of Jalal"
+            width={64}
+            height={64}
+            quality={95}
+            priority
+            className="h-8 w-8 rounded-full object-cover"
+          />
+          <span className="relative flex h-2 w-2" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:animate-none" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+          </span>
+          Currently at Appical · Amsterdam
+        </div>
+
+        <h1 className="mt-8 text-balance text-4xl font-semibold tracking-tight sm:text-6xl sm:leading-[1.05]">
+          Hi, I&apos;m Jalal. I build web apps with{" "}
+          <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-600 bg-clip-text text-transparent dark:from-indigo-300 dark:to-fuchsia-300">
+            React &amp; TypeScript
+          </span>
+          .
+        </h1>
+
+        <p className="mt-6 max-w-[36rem] text-pretty text-lg leading-relaxed text-gray-600 dark:text-white/60">
+          Front-end developer who moved into software from aeronautical
+          engineering. I love the problem-solving side of building interfaces.
+        </p>
+
+        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
+          <Link
+            href="#projects"
+            className="group flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3 font-medium text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-white/90"
+            onClick={() => {
+              setActiveSection("Projects");
+              setTimeOfLastClick(Date.now());
             }}
           >
-            💻
-          </motion.span>
-        </div>
-      </div>
-
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <span className="font-bold">Hi, I&apos;m Jalal.</span> I&apos;m a
-        <span className="font-bold"> front-end developer.</span> I
-        enjoy building <span className="italic">sites & apps</span>. My focus is
-        <span className="font-bold"> Front-end</span>.
-      </motion.h1>
-
-      <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
-      >
-        <Link
-          href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          onClick={() => {
-            setActiveSection("Contact");
-            setTimeOfLastClick(Date.now());
-          }}
-        >
-          Contact me here
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link>
-        <a
-          href="/CV.pdf"
-          download
-          className="group bg-white borderBlack px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition dark:bg-white/10"
-        >
-          Download CV
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </a>
-        <div className="flex gap-2">
+            See my work
+            <BsArrowRight className="transition group-hover:translate-x-1" />
+          </Link>
           <a
-            className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition borderBlack cursor-pointer dark:bg-white/10 dark:text-white/60"
-            href="https://www.linkedin.com/in/jalal-habeeb/"
-            target="_blank"
-            aria-label="LinkedIn profile"
+            href="/CV.pdf"
+            download
+            className="group flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-6 py-3 font-medium backdrop-blur transition hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
           >
-            <BsLinkedin />
+            Download CV
+            <HiDownload className="opacity-60 transition group-hover:translate-y-0.5" />
           </a>
-          <a
-            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition border border-black/10 cursor-pointer dark:bg-white/10 dark:text-white/60"
-            href="https://github.com/JalalHabeeb"
-            target="_blank"
-            aria-label="GitHub profile"
-          >
-            <FaGithubSquare />
-          </a>
+          <div className="flex gap-3">
+            <a
+              className={iconLinkClass}
+              href="https://www.linkedin.com/in/jalal-habeeb/"
+              target="_blank"
+              aria-label="LinkedIn profile"
+            >
+              <BsLinkedin />
+            </a>
+            <a
+              className={iconLinkClass}
+              href="https://github.com/JalalHabeeb"
+              target="_blank"
+              aria-label="GitHub profile"
+            >
+              <FaGithub />
+            </a>
+          </div>
         </div>
       </motion.div>
     </section>
