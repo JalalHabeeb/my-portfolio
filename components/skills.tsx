@@ -9,13 +9,15 @@ import { motion } from "framer-motion";
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
-    y: 100,
+    y: 12,
   },
   animate: (index: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.05 * index,
+      delay: 0.03 * index,
+      duration: 0.4,
+      ease: "easeOut" as const,
     },
   }),
 };
@@ -30,11 +32,11 @@ const Skills = () => {
       id="skills"
     >
       <SectionHeading>My Skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
+      <ul className="flex flex-wrap justify-center gap-2 text-gray-800 dark:text-white/80">
         {skillsData.map((skill, index) => (
           <motion.li
             key={index}
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="rounded-full border border-black/10 bg-white/70 px-4 py-2 font-medium backdrop-blur dark:border-white/10 dark:bg-white/5"
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"

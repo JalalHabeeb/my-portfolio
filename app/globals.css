@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.borderBlack {
-  @apply border border-black/10;
+/* Visible keyboard focus in the accent colour. */
+:focus-visible {
+  outline: 2px solid theme("colors.accent.500");
+  outline-offset: 2px;
 }

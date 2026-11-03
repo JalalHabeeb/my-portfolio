@@ -10,9 +10,9 @@ const About = () => {
   return (
     <motion.section
       className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
-      initial={{ opacity: 0, y: 100 }}
+      initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
+      transition={{ delay: 0.15, duration: 0.5, ease: "easeOut" }}
       id="about"
       ref={ref}
     >
@@ -24,7 +24,7 @@ const About = () => {
         bootcamp with{" "}
         <a
           href="https://www.hackyourfuture.net/"
-          className="text-green-700 underline dark:text-green-400"
+          className="font-medium text-accent-600 underline underline-offset-4 hover:text-accent-700 dark:text-accent-300 dark:hover:text-accent-200"
           target="_blank"
         >
           Hack Your Future
