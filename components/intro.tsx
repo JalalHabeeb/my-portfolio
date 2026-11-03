@@ -48,7 +48,7 @@ const Intro = () => {
 
         <h1 className="mt-8 text-balance text-4xl font-semibold tracking-tight sm:text-6xl sm:leading-[1.05]">
           Hi, I&apos;m Jalal. I build web apps with{" "}
-          <span className="bg-gradient-to-r from-indigo-600 to-fuchsia-600 bg-clip-text text-transparent dark:from-indigo-300 dark:to-fuchsia-300">
+          <span className="bg-gradient-to-r from-accent-600 to-fuchsia-600 bg-clip-text text-transparent dark:from-accent-300 dark:to-fuchsia-300">
             React &amp; TypeScript
           </span>
           .

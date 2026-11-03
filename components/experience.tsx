@@ -32,7 +32,7 @@ const Experience = () => {
             <span
               aria-hidden="true"
               className={clsx(
-                "absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full ring-4 ring-gray-50 dark:ring-gray-900",
+                "absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full ring-4 ring-gray-50 dark:ring-gray-950",
                 index === 0
                   ? "bg-emerald-500"
                   : "bg-gray-300 dark:bg-white/30"

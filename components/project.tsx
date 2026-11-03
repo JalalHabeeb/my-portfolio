@@ -57,7 +57,7 @@ const Project = ({
         )}
       >
         {featured && (
-          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-300">
+          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-accent-600 dark:text-accent-300">
             Featured
           </p>
         )}

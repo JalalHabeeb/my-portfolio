@@ -22,20 +22,23 @@ const Contact = () => {
       className="mb-20 sm:mb-28 w-[min(100%,38rem)]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
       <SectionHeading>Contact Me</SectionHeading>
-      <p className="text-gray-700 text-center -mt-6 dark:text-white/80">
+      <p className="-mt-4 text-center text-gray-600 dark:text-white/60">
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:jalalhabeeb@gmail.com">
+        <a
+          className="font-medium text-accent-600 underline underline-offset-4 hover:text-accent-700 dark:text-accent-300 dark:hover:text-accent-200"
+          href="mailto:jalalhabeeb@gmail.com"
+        >
           jalalhabeeb@gmail.com
         </a>{" "}
         or through this form
       </p>
 
       <form
-        className="mt-10 flex flex-col dark:text-black items-center"
+        className="mt-10 flex flex-col items-center"
         action={async (formData) => {
           const { error } = await sendEmail(formData);
           if (error) {
@@ -54,11 +57,13 @@ const Contact = () => {
           onChange={(e) => setSenderEmail(e.target.value)}
           required
           maxLength={500}
-          className="h-14 rounded-lg borderBlack px-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none w-full"
+          aria-label="Your email"
+          className="h-14 px-4 w-full rounded-xl border border-black/10 bg-white/70 text-gray-950 placeholder:text-gray-400 backdrop-blur transition focus:border-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-500/15 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-white/40 dark:focus:border-accent-400"
           placeholder="Your email"
         />
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none w-full"
+          aria-label="Your message"
+          className="my-3 h-52 p-4 w-full rounded-xl border border-black/10 bg-white/70 text-gray-950 placeholder:text-gray-400 backdrop-blur transition focus:border-accent-500 focus:outline-none focus:ring-4 focus:ring-accent-500/15 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-white/40 dark:focus:border-accent-400"
           placeholder="Your message"
           required
           maxLength={5000}

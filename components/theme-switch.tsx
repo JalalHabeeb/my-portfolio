@@ -9,7 +9,8 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950"
+      type="button"
+      className="flex h-9 w-9 items-center justify-center rounded-full text-gray-600 transition hover:bg-black/5 hover:text-gray-950 dark:text-white/60 dark:hover:bg-white/10 dark:hover:text-white"
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
     >
