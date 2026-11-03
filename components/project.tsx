@@ -1,68 +1,90 @@
 "use client";
-import { useRef } from "react";
+
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import clsx from "clsx";
+import { FiArrowUpRight } from "react-icons/fi";
 
 type ProjectProps = (typeof projectsData)[number];
+
+const linkClass =
+  "inline-flex items-center gap-1 text-gray-900 underline-offset-4 hover:underline dark:text-white";
 
 const Project = ({
   title,
   description,
   link,
+  repo,
   tags,
   imageUrl,
+  featured,
 }: ProjectProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
   return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={clsx(
+        "group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white/60 backdrop-blur transition-shadow hover:shadow-xl hover:shadow-black/5 dark:border-white/10 dark:bg-white/[0.04] dark:hover:shadow-black/30",
+        featured && "sm:col-span-2 sm:grid sm:grid-cols-2"
+      )}
     >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <a
-            href={link}
-            className="text-2xl font-semibold underline"
-            target="_blank"
-          >
-            {title}
-          </a>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
-
+      <div
+        className={clsx(
+          "relative overflow-hidden bg-gray-100 dark:bg-white/5",
+          featured
+            ? "aspect-[16/10] sm:order-2 sm:aspect-auto sm:min-h-[20rem]"
+            : "aspect-[2/1]"
+        )}
+      >
         <Image
           src={imageUrl}
           alt={`Screenshot of ${title}`}
+          fill
+          sizes="(min-width: 640px) 28rem, 100vw"
           quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl group-even:-right-[initial] group-even:-left-40 group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 transition group-hover:scale-[1.04] group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2"
+          placeholder="blur"
+          className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
         />
-      </section>
-    </motion.div>
+      </div>
+
+      <div
+        className={clsx(
+          "flex flex-1 flex-col p-6",
+          featured && "sm:p-8"
+        )}
+      >
+        {featured && (
+          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-300">
+            Featured
+          </p>
+        )}
+        <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
+        <p className="mt-2 leading-relaxed text-gray-600 dark:text-white/60">
+          {description}
+        </p>
+        <ul className="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+          {tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-black/10 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:border-white/10 dark:text-white/60"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-6 flex gap-5 text-sm font-medium sm:mt-auto sm:pt-6">
+          <a href={link} target="_blank" className={linkClass}>
+            Live site <FiArrowUpRight aria-hidden="true" />
+          </a>
+          <a href={repo} target="_blank" className={linkClass}>
+            Code <FiArrowUpRight aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </motion.article>
   );
 };
 

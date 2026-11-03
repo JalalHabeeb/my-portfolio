@@ -7,15 +7,19 @@ import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
 
 const Projects = () => {
-  const { ref } = useSectionInView("Projects", 0.5);
+  const { ref } = useSectionInView("Projects", 0.3);
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
-      <SectionHeading>My Projects</SectionHeading>
+    <section
+      ref={ref}
+      id="projects"
+      className="mb-28 w-full max-w-[56rem] scroll-mt-28"
+    >
+      <SectionHeading>Side Projects</SectionHeading>
 
-      <div>
-        {projectsData.map((project, index) => (
-          <Project key={index} {...project} />
+      <div className="grid gap-4 sm:grid-cols-2">
+        {projectsData.map((project) => (
+          <Project key={project.title} {...project} />
         ))}
       </div>
     </section>

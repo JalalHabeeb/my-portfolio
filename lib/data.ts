@@ -1,12 +1,3 @@
-import React from "react";
-import {
-  FaCode,
-  FaLaptopCode,
-  FaLanguage,
-  FaGear,
-  FaLaptopMedical,
-  FaGraduationCap,
-} from "react-icons/fa6";
 import myPortfolioImg from "@/public/myPortfolio.png";
 import promptopiaImg from "@/public/promptopia.png";
 import iconPhotographyImg from "@/public/iconPhotography.png";
@@ -21,16 +12,16 @@ export const links = [
     hash: "#about",
   },
   {
-    name: "Projects",
-    hash: "#projects",
+    name: "Experience",
+    hash: "#experience",
   },
   {
     name: "Skills",
     hash: "#skills",
   },
   {
-    name: "Experience",
-    hash: "#experience",
+    name: "Projects",
+    hash: "#projects",
   },
   {
     name: "Contact",
@@ -38,62 +29,64 @@ export const links = [
   },
 ] as const;
 
+// Tech roles, newest first. Shown as the main experience list.
 export const experiencesData = [
   {
-    title: "B.Sc. in Aeronautical Mechanical Engineering",
-    location: "Aleppo, SY",
-    description:
-      "I graduated as an Engineer with a B.Sc. in Aeronautical Mechanical Engineering from Aleppo University in Syria",
-    icon: React.createElement(FaGraduationCap),
-    date: "2003 - 2009",
-  },
-  {
-    title: "Front-end Web Developer @: Stirring Interactive",
-    location: "Homs, SY",
-    description:
-      "I worked in a developers team where I built websites using HTML and CSS while I kept close connection with client to modify the design upon requesting, as well as maintain an open communication link with other development teams to ensure efficiency",
-    icon: React.createElement(FaCode),
-    date: "2009 - 2010",
-  },
-  {
-    title: "Translator & Proofreader @: Self Employed",
-    location: "Homs, SY",
-    description:
-      "I worked as an English/Arabic translator and proofreader as a freelancer with different local and international companies.",
-    icon: React.createElement(FaLanguage),
-    date: "2010 - 2018",
-  },
-  {
-    title: "Mechanical Design Engineer @: WDRVM",
-    location: "Homs, SY",
-    description:
-      "I worked in the mechanical design team of a wind turbines factory where I used SolidWorks to design mechanical parts and produce production drawings from part/Assembly, as well as assembling the wind turbine and calibrating shafts alignment and flanges parallelism using Easy-Laser technologies.",
-    icon: React.createElement(FaGear),
-    date: "2018 - 2020",
-  },
-  {
-    title: "Operations Lead @: BlueBook",
-    location: "Homs, SY",
-    description:
-      "Co-founder of BlueBook for tech services such as fixing and maintaining PCs and laptops on the hardware/Software level, as well as buy and sell new and used laptops and PCs.",
-    icon: React.createElement(FaLaptopMedical),
-    date: "2018 - 2020",
-  },
-  {
-    title: "Full-Stack Web Development @: Hack Your Future",
+    role: "Front-end Developer",
+    company: "Appical",
     location: "Amsterdam, NL",
+    date: "2024 – now",
     description:
-      "I graduated from a 7-month coding bootcamp with modules on HTML, CSS, JavaScript, Node.js, Express.js, MySQL, and React.",
-    icon: React.createElement(FaLaptopCode),
-    date: "2022 - 2023",
+      "I build and maintain the company's web applications in a team of developers.",
+    tags: ["React", "Redux", "TypeScript", "Storybook"],
   },
   {
-    title: "Front-end Web Developer @: Appical",
+    role: "Full-Stack Web Development",
+    company: "Hack Your Future",
     location: "Amsterdam, NL",
+    date: "2022 – 2023",
     description:
-      "I work as a front-end developer in a team of developers, building and maintaining the company's web applications using React, Redux, TypeScript, JavaScript, and Storybook.",
-    icon: React.createElement(FaLaptopCode),
-    date: "2024 - now",
+      "A 7-month coding bootcamp with modules on HTML, CSS, JavaScript, Node.js, Express.js, MySQL and React.",
+    tags: ["JavaScript", "React", "Node.js", "MySQL"],
+  },
+  {
+    role: "Front-end Web Developer",
+    company: "Stirring Interactive",
+    location: "Homs, SY",
+    date: "2009 – 2010",
+    description:
+      "I built websites with HTML and CSS, worked closely with clients to adjust designs on request, and kept an open line with the other development teams.",
+    tags: ["HTML", "CSS"],
+  },
+] as const;
+
+// Roles before the move into software. Shown as a compact list.
+export const earlierExperienceData = [
+  {
+    role: "Mechanical Design Engineer",
+    company: "WDRVM",
+    summary:
+      "Designed wind-turbine parts and production drawings in SolidWorks, and assembled and aligned turbines.",
+    date: "2018 – 2020",
+  },
+  {
+    role: "Co-founder & Operations Lead",
+    company: "BlueBook",
+    summary: "Repair, maintenance and sales of new and used PCs and laptops.",
+    date: "2018 – 2020",
+  },
+  {
+    role: "Translator & Proofreader",
+    company: "Self-employed",
+    summary:
+      "English/Arabic translation for local and international companies.",
+    date: "2010 – 2018",
+  },
+  {
+    role: "B.Sc. Aeronautical Mechanical Engineering",
+    company: "Aleppo University",
+    summary: "Aleppo, Syria.",
+    date: "2003 – 2009",
   },
 ] as const;
 
@@ -101,26 +94,32 @@ export const projectsData = [
   {
     title: "Portfolio",
     description:
-      "My own portfolio. Contains all my information, skills, experience and contact details.",
+      "This site, built with Next.js 16 and React 19: a server-action contact form that sends through Resend, dark mode without a flash on load, scroll-aware navigation and a responsive, accessible layout.",
     link: "https://jalalhabeeb.vercel.app/",
-    tags: ["React", "Next.js", "Tailwind", "TypeScript", "Framer"],
+    repo: "https://github.com/JalalHabeeb/my-portfolio",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind", "Framer Motion", "Resend"],
     imageUrl: myPortfolioImg,
+    featured: true,
   },
   {
     title: "Promptopia",
     description:
-      "Promptopia is an open-source AI prompting tool for the modern world to discover, create and share creative prompts",
+      "An AI prompt-sharing app for discovering, creating and sharing prompts, with NextAuth sign-in and a MongoDB backend.",
     link: "https://promptopia-three-pink.vercel.app/",
-    tags: ["React", "Next.js", "Tailwind", "Next-auth", "MongoDB"],
+    repo: "https://github.com/JalalHabeeb/promptopia",
+    tags: ["Next.js", "NextAuth", "MongoDB"],
     imageUrl: promptopiaImg,
+    featured: false,
   },
   {
     title: "Icon Photography",
     description:
-      "A website for a client who is a photographer and videographer for special occasions.",
+      "A website for a photographer and videographer who covers special occasions.",
     link: "https://icon-photography.vercel.app/",
-    tags: ["React", "Next.js", "Tailwind"],
+    repo: "https://github.com/JalalHabeeb/icon-photography",
+    tags: ["Next.js", "Tailwind"],
     imageUrl: iconPhotographyImg,
+    featured: false,
   },
 ] as const;
 
