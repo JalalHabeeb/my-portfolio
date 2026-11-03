@@ -19,16 +19,16 @@ const Experience = () => {
       <SectionHeading>My Experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
+          <VerticalTimelineElement
+            key={index}
               contentStyle={{
                 backgroundColor:
                   theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
                 visibility: "visible",
                 boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0,05)",
+                border: "1px solid rgba(0, 0, 0, 0.05)",
                 textAlign: "left",
-                padding: "1.3 rem 2 rem",
+                padding: "1.3rem 2rem",
               }}
               contentArrowStyle={{
                 borderRight:
@@ -51,7 +51,6 @@ const Experience = () => {
                 {item.description}
               </p>
             </VerticalTimelineElement>
-          </React.Fragment>
         ))}
       </VerticalTimeline>
     </section>

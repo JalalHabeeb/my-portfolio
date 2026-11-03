@@ -59,7 +59,7 @@ const Intro = () => {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hi, I&apos;m Jalal.</span> I&apos;m a
-        <span className="font-bold"> full-stack developer trainee.</span> I
+        <span className="font-bold"> front-end developer.</span> I
         enjoy building <span className="italic">sites & apps</span>. My focus is
         <span className="font-bold"> Front-end</span>.
       </motion.h1>
@@ -96,6 +96,7 @@ const Intro = () => {
             className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition borderBlack cursor-pointer dark:bg-white/10 dark:text-white/60"
             href="https://www.linkedin.com/in/jalal-habeeb/"
             target="_blank"
+            aria-label="LinkedIn profile"
           >
             <BsLinkedin />
           </a>
@@ -103,6 +104,7 @@ const Intro = () => {
             className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition border border-black/10 cursor-pointer dark:bg-white/10 dark:text-white/60"
             href="https://github.com/JalalHabeeb"
             target="_blank"
+            aria-label="GitHub profile"
           >
             <FaGithubSquare />
           </a>

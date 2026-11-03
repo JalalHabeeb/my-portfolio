@@ -6,4 +6,4 @@ This is my personal portfolio [Jalal Habeeb](https://jalalhabeeb.vercel.app/) pr
 
 I built this web site to demonstrate and practice my React & Next.js skills and to learn TypeScript.
 
-I used React libraries such as Framer Motion, React Email and Resend. smf deployed it on Vercel.
+I used React libraries such as Framer Motion, React Email and Resend, and deployed it on Vercel.

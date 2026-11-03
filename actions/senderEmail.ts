@@ -1,7 +1,7 @@
 "use server";
 import React from "react";
 import { Resend } from "resend";
-import { validateString, getErrorMessage } from "@/lib/utils";
+import { validateString, isValidEmail, getErrorMessage } from "@/lib/utils";
 import ContactFormEmail from "@/email/contact-form-email";
 
 const apiKey = process.env.RESEND_API_KEY;
@@ -11,7 +11,7 @@ export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail");
   const message = formData.get("message");
 
-  if (!validateString(senderEmail, 500)) {
+  if (!validateString(senderEmail, 500) || !isValidEmail(senderEmail)) {
     return {
       error: "Invalid Sender Email",
     };
