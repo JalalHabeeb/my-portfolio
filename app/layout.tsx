@@ -14,8 +14,9 @@ const geist = Geist({ subsets: ["latin"] });
 const themeScript = `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}`;
 
 const title = "Jalal Habeeb · Front-end Developer";
+// LinkedIn warns under 100 characters; search results cut off around 160.
 const description =
-  "Front-end developer at Appical in Amsterdam, building web apps with React and TypeScript.";
+  "I'm a front-end developer at Appical in Amsterdam, building web apps with React and TypeScript. See my experience, side projects and how to reach me.";
 
 export const metadata: Metadata = {
   // Absolute base for the generated Open Graph image URL in link previews.
